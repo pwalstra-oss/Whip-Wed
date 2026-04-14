@@ -30,18 +30,22 @@
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #0d0d0d 100%);
+    position: relative; overflow: hidden;
     display: flex; align-items: center;
     padding: 120px 40px 80px;
-    position: relative; overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute; top: 0; right: 0;
-    width: 55%; height: 100%;
-    background: linear-gradient(135deg, #E8401C15, #E8401C30);
-    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center;
+    filter: grayscale(100%);
+    transform: scale(1.05);
   }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.5) 100%);
+  }
+  .hero::before { display: none; }
   .hero-content { max-width: 600px; position: relative; z-index: 2; }
   .hero-badge {
     display: inline-block;
@@ -305,6 +309,8 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">🗺 NOW AVAILABLE IN CHICAGO</div>
     <h1>Drive a Tesla.<br>Earn More.<br><span>Pay Less.</span></h1>
