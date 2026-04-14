@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rent a Tesla for Uber & Lyft in Chicago | DriveWhip</title>
+<meta name="description" content="Rent a Tesla Model 3 or Model Y for Uber & Lyft in Chicago starting at $399/week. Insurance included, unlimited mileage, free maintenance. Apply today.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #111; background: #fff; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 999;
+    background: #000; padding: 16px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo { color: #fff; font-size: 22px; font-weight: 900; letter-spacing: 1px; }
+  .logo span { color: #E8401C; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: #ccc; text-decoration: none; font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { color: #E8401C; }
+  .nav-cta {
+    background: #E8401C; color: #fff; padding: 10px 24px;
+    border-radius: 4px; font-weight: 700; font-size: 14px;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #c73516; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #0d0d0d 100%);
+    display: flex; align-items: center;
+    padding: 120px 40px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(135deg, #E8401C15, #E8401C30);
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .hero-content { max-width: 600px; position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-block;
+    background: #E8401C20; border: 1px solid #E8401C;
+    color: #E8401C; padding: 6px 16px; border-radius: 20px;
+    font-size: 13px; font-weight: 600; margin-bottom: 24px; letter-spacing: 1px;
+  }
+  .hero h1 {
+    font-size: 52px; font-weight: 900; color: #fff;
+    line-height: 1.1; margin-bottom: 20px;
+  }
+  .hero h1 span { color: #E8401C; }
+  .hero p {
+    font-size: 18px; color: #aaa; line-height: 1.7;
+    margin-bottom: 36px; max-width: 500px;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #E8401C; color: #fff; padding: 16px 36px;
+    border-radius: 4px; font-size: 16px; font-weight: 700;
+    text-decoration: none; transition: all 0.2s;
+    box-shadow: 0 4px 20px #E8401C50;
+  }
+  .btn-primary:hover { background: #c73516; transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent; color: #fff; padding: 16px 36px;
+    border-radius: 4px; font-size: 16px; font-weight: 700;
+    text-decoration: none; border: 2px solid #444;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: #fff; }
+  .hero-stats {
+    display: flex; gap: 48px; margin-top: 56px;
+    padding-top: 40px; border-top: 1px solid #222;
+  }
+  .stat-num { font-size: 36px; font-weight: 900; color: #E8401C; }
+  .stat-label { font-size: 13px; color: #888; margin-top: 4px; }
+
+  /* ── URGENCY BAR ── */
+  .urgency {
+    background: #E8401C; color: #fff;
+    text-align: center; padding: 14px;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.5px;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 80px 40px; }
+  .section-label {
+    color: #E8401C; font-size: 13px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
+  }
+  h2 { font-size: 38px; font-weight: 900; color: #111; margin-bottom: 16px; line-height: 1.2; }
+  .section-sub { font-size: 17px; color: #666; max-width: 560px; line-height: 1.7; }
+  .center { text-align: center; }
+  .center .section-sub { margin: 0 auto; }
+
+  /* ── BENEFITS ── */
+  .benefits { background: #f8f8f8; }
+  .benefits-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 56px;
+  }
+  .benefit-card {
+    background: #fff; border-radius: 8px; padding: 32px;
+    border: 1px solid #eee;
+    transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.10); border-color: #E8401C30; }
+  .benefit-icon {
+    width: 52px; height: 52px; background: #E8401C15;
+    border-radius: 12px; display: flex; align-items: center;
+    justify-content: center; font-size: 24px; margin-bottom: 20px;
+  }
+  .benefit-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .benefit-card p { font-size: 14px; color: #666; line-height: 1.6; }
+
+  /* ── HOW IT WORKS ── */
+  .steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 32px; margin-top: 56px; position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute; top: 28px; left: 12.5%; right: 12.5%;
+    height: 2px; background: linear-gradient(to right, #E8401C, #E8401C80);
+  }
+  .step { text-align: center; position: relative; }
+  .step-num {
+    width: 56px; height: 56px; background: #E8401C;
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 20px; font-weight: 900;
+    color: #fff; margin: 0 auto 20px; position: relative; z-index: 1;
+    box-shadow: 0 4px 16px #E8401C50;
+  }
+  .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .step p { font-size: 14px; color: #666; line-height: 1.6; }
+
+  /* ── FLEET ── */
+  .fleet { background: #0d0d0d; }
+  .fleet h2 { color: #fff; }
+  .fleet .section-label { color: #E8401C; }
+  .fleet .section-sub { color: #888; }
+  .fleet-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 24px; margin-top: 56px;
+  }
+  .fleet-card {
+    background: #1a1a1a; border-radius: 12px; overflow: hidden;
+    border: 1px solid #2a2a2a; transition: all 0.2s;
+  }
+  .fleet-card:hover { border-color: #E8401C50; transform: translateY(-4px); }
+  .fleet-card.featured { border-color: #E8401C; position: relative; }
+  .featured-badge {
+    position: absolute; top: 16px; right: 16px;
+    background: #E8401C; color: #fff; padding: 4px 12px;
+    border-radius: 20px; font-size: 12px; font-weight: 700;
+  }
+  .fleet-img {
+    height: 220px; background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 72px;
+  }
+  .fleet-info { padding: 28px; }
+  .fleet-info h3 { color: #fff; font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+  .fleet-info .fleet-desc { color: #888; font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+  .fleet-specs {
+    display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;
+  }
+  .spec { background: #222; color: #ccc; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .fleet-price { color: #E8401C; font-size: 28px; font-weight: 900; }
+  .fleet-price span { color: #666; font-size: 14px; font-weight: 400; }
+  .fleet-cta {
+    display: block; background: #E8401C; color: #fff;
+    text-align: center; padding: 14px; border-radius: 6px;
+    font-weight: 700; text-decoration: none; margin-top: 16px;
+    transition: background 0.2s;
+  }
+  .fleet-cta:hover { background: #c73516; }
+
+  /* ── PRICING ── */
+  .pricing-box {
+    background: linear-gradient(135deg, #E8401C, #c73516);
+    border-radius: 16px; padding: 56px; text-align: center;
+    margin-top: 40px; color: #fff;
+    box-shadow: 0 8px 40px #E8401C40;
+  }
+  .pricing-box h3 { font-size: 18px; font-weight: 600; opacity: 0.85; margin-bottom: 8px; }
+  .pricing-big { font-size: 72px; font-weight: 900; line-height: 1; margin-bottom: 8px; }
+  .pricing-sub { font-size: 16px; opacity: 0.8; margin-bottom: 32px; }
+  .pricing-includes {
+    display: flex; justify-content: center; gap: 32px;
+    flex-wrap: wrap; margin-bottom: 40px;
+  }
+  .pricing-item { font-size: 15px; font-weight: 600; }
+  .pricing-item::before { content: '✓  '; }
+
+  /* ── REQUIREMENTS ── */
+  .requirements { background: #f8f8f8; }
+  .req-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+  .req-item {
+    background: #fff; border-radius: 8px; padding: 28px 32px;
+    display: flex; align-items: flex-start; gap: 20px;
+    border: 1px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .req-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .req-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .req-item p { font-size: 14px; color: #666; line-height: 1.6; }
+
+  /* ── FAQ ── */
+  .faq-list { max-width: 760px; margin: 48px auto 0; }
+  .faq-item {
+    border-bottom: 1px solid #eee; padding: 24px 0; cursor: pointer;
+  }
+  .faq-q {
+    font-size: 16px; font-weight: 700; color: #111;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .faq-q::after { content: '+'; font-size: 24px; color: #E8401C; font-weight: 300; }
+  .faq-a { font-size: 15px; color: #555; line-height: 1.7; margin-top: 16px; }
+
+  /* ── TRUST ── */
+  .trust { background: #000; padding: 60px 40px; }
+  .trust-inner {
+    display: flex; justify-content: center; gap: 80px;
+    flex-wrap: wrap;
+  }
+  .trust-item { text-align: center; }
+  .trust-num { font-size: 48px; font-weight: 900; color: #E8401C; }
+  .trust-label { color: #888; font-size: 14px; margin-top: 6px; }
+
+  /* ── LOCATION ── */
+  .location { background: #f8f8f8; }
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; align-items: center; }
+  .location-map {
+    background: #ddd; border-radius: 12px; height: 320px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px; color: #999;
+  }
+  .location-info h3 { font-size: 22px; font-weight: 800; margin-bottom: 20px; }
+  .location-detail { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .loc-icon { font-size: 22px; flex-shrink: 0; }
+  .loc-text strong { display: block; font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .loc-text span { font-size: 14px; color: #666; }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: #000; text-align: center; padding: 100px 40px;
+  }
+  .final-cta h2 { color: #fff; font-size: 46px; margin-bottom: 16px; }
+  .final-cta p { color: #888; font-size: 18px; margin-bottom: 40px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a0a0a; border-top: 1px solid #1a1a1a;
+    padding: 48px 40px 24px; color: #888;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+  .footer-logo { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 12px; }
+  .footer-logo span { color: #E8401C; }
+  footer p { font-size: 13px; line-height: 1.7; }
+  .footer-col h4 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { color: #888; text-decoration: none; font-size: 13px; }
+  .footer-col a:hover { color: #E8401C; }
+  .footer-bottom { border-top: 1px solid #1a1a1a; padding-top: 24px; text-align: center; font-size: 12px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 20px 60px; }
+    .hero h1 { font-size: 32px; }
+    section { padding: 60px 20px; }
+    .benefits-grid, .steps, .fleet-grid, .req-grid { grid-template-columns: 1fr; }
+    .steps::before { display: none; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .location-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    h2 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Drive<span>Whip</span></div>
+  <ul class="nav-links">
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#fleet">Fleet</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a href="#apply" class="nav-cta">Apply Now</a>
+</nav>
+
+<!-- URGENCY BAR -->
+<div class="urgency">⚡ Limited vehicles available this week in Chicago — Apply now to reserve yours</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🗺 NOW AVAILABLE IN CHICAGO</div>
+    <h1>Drive a Tesla.<br>Earn More.<br><span>Pay Less.</span></h1>
+    <p>Rent a Tesla Model 3 or Model Y for Uber, Lyft, or delivery — starting at just $399/week. Insurance included. Unlimited mileage. Let's Make Moves.</p>
+    <div class="hero-btns">
+      <a href="#apply" class="btn-primary">Apply Now — It's Free</a>
+      <a href="#fleet" class="btn-secondary">View Fleet</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">$399</div>
+        <div class="stat-label">Starting per week</div>
+      </div>
+      <div>
+        <div class="stat-num">$0</div>
+        <div class="stat-label">Gas — it's electric</div>
+      </div>
+      <div>
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Unlimited mileage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="benefits">
+  <div class="center">
+    <div class="section-label">Why DriveWhip</div>
+    <h2>Everything Included.<br>Nothing Hidden.</h2>
+    <p class="section-sub">One flat weekly rate covers everything a gig driver needs to get on the road and stay there.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <h3>Tesla Model 3 or Model Y</h3>
+      <p>Drive the car passengers request most. Higher ratings, more tips, and access to premium tiers on Uber and Lyft.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🛡️</div>
+      <h3>Insurance Included</h3>
+      <p>Full coverage comes with every rental. No separate policy to buy, no extra monthly bills. You're covered from day one.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🛣️</div>
+      <h3>Unlimited Mileage</h3>
+      <p>Drive as much as you want. No mileage caps eating into your earnings. The more you drive, the more you make.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🔧</div>
+      <h3>Tesla-Certified Free Maintenance</h3>
+      <p>All maintenance is covered and handled by Tesla-certified technicians. You focus on driving, we handle the car.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">📱</div>
+      <h3>Drive Any Platform</h3>
+      <p>Approved for Uber, Lyft, Instacart, and more. Maximize your income by driving for multiple apps simultaneously.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">💸</div>
+      <h3>Instant & Express Pay Eligible</h3>
+      <p>Get paid the same day. DriveWhip vehicles are approved for Uber Instant Pay and Lyft Express Pay.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="center">
+    <div class="section-label">Simple Process</div>
+    <h2>On the Road in 4 Steps</h2>
+    <p class="section-sub">Same-day approval available. Most drivers are behind the wheel within 24 hours.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Apply Online</h3>
+      <p>Fill out the quick application — takes less than 5 minutes. No credit check required.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Get Verified</h3>
+      <p>Upload your Uber or Lyft approval. Our team reviews same day.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Pick Up Your Tesla</h3>
+      <p>Come to 2107 W Fulton St, Chicago. Sign your agreement and take the keys.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Start Earning</h3>
+      <p>Hit the road in a Tesla. More rides, higher ratings, bigger tips. Let's Make Moves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section class="fleet" id="fleet">
+  <div class="center">
+    <div class="section-label">Our Fleet</div>
+    <h2 style="color:#fff">Choose Your Tesla</h2>
+    <p class="section-sub">Both models are fully approved for Uber, Lyft, and delivery platforms in Chicago.</p>
+  </div>
+  <div class="fleet-grid">
+    <div class="fleet-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="fleet-img">🚗</div>
+      <div class="fleet-info">
+        <h3>Tesla Model 3</h3>
+        <p class="fleet-desc">The most popular rideshare Tesla in Chicago. Sporty, efficient, and passengers love it. Up to 358 miles of range per charge.</p>
+        <div class="fleet-specs">
+          <span class="spec">⚡ 358mi Range</span>
+          <span class="spec">🚀 0-60 in 3.1s</span>
+          <span class="spec">5 Passengers</span>
+          <span class="spec">Uber/Lyft Approved</span>
+        </div>
+        <div class="fleet-price">$399<span>/week</span></div>
+        <a href="#apply" class="fleet-cta">Reserve This Car</a>
+      </div>
+    </div>
+    <div class="fleet-card">
+      <div class="fleet-img">🚙</div>
+      <div class="fleet-info">
+        <h3>Tesla Model Y</h3>
+        <p class="fleet-desc">SUV comfort for longer shifts. More space, higher ride comfort ratings, and passengers consistently tip more in SUVs.</p>
+        <div class="fleet-specs">
+          <span class="spec">⚡ 330mi Range</span>
+          <span class="spec">🚀 0-60 in 4.8s</span>
+          <span class="spec">5–7 Passengers</span>
+          <span class="spec">Uber/Lyft Approved</span>
+        </div>
+        <div class="fleet-price">$399<span>/week — Ask about availability</span></div>
+        <a href="#apply" class="fleet-cta">Reserve This Car</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING BOX -->
+  <div class="pricing-box">
+    <h3>Everything included for one flat weekly rate</h3>
+    <div class="pricing-big">$399</div>
+    <div class="pricing-sub">per week — no hidden fees, no surprises</div>
+    <div class="pricing-includes">
+      <span class="pricing-item">Full Insurance</span>
+      <span class="pricing-item">Unlimited Mileage</span>
+      <span class="pricing-item">Free Maintenance</span>
+      <span class="pricing-item">All Platforms Approved</span>
+      <span class="pricing-item">No Gas Costs</span>
+    </div>
+    <a href="#apply" class="btn-secondary" style="border-color:#fff; display:inline-block;">Apply Now — It's Free</a>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section class="requirements" id="apply">
+  <div class="center">
+    <div class="section-label">Eligibility</div>
+    <h2>Who Can Apply</h2>
+    <p class="section-sub">Qualifying is simple. If you're already driving or approved to drive for rideshare, you're most of the way there.</p>
+  </div>
+  <div class="req-grid">
+    <div class="req-item">
+      <div class="req-icon">🚗</div>
+      <div>
+        <h3>Currently Driving for Rideshare</h3>
+        <p>You're already active on Uber, Lyft, or a delivery platform and want to upgrade to a Tesla — or reduce your costs with an all-inclusive rental.</p>
+      </div>
+    </div>
+    <div class="req-item">
+      <div class="req-icon">✅</div>
+      <div>
+        <h3>Approved to Drive for Uber or Lyft</h3>
+        <p>You have an active Uber or Lyft driver account in good standing. That's the main requirement — we handle the rest.</p>
+      </div>
+    </div>
+    <div class="req-item">
+      <div class="req-icon">📋</div>
+      <div>
+        <h3>Valid Driver's License</h3>
+        <p>A valid Illinois driver's license (or out-of-state if you're licensed to drive in Chicago). Must be 21 or older.</p>
+      </div>
+    </div>
+    <div class="req-item">
+      <div class="req-icon">🏙️</div>
+      <div>
+        <h3>Based in Chicago</h3>
+        <p>Vehicle pickup and return at our Chicago facility at 2107 W Fulton St. You must be driving in the Chicago metro area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-num">$0</div>
+      <div class="trust-label">Gas Costs</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">4.9★</div>
+      <div class="trust-label">Average Driver Rating</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">$399</div>
+      <div class="trust-label">Starting Weekly Rate</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">24hr</div>
+      <div class="trust-label">Approval Turnaround</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="center">
+    <div class="section-label">FAQ</div>
+    <h2>Common Questions</h2>
+    <p class="section-sub">Everything you need to know before applying.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">How much does it cost to rent a Tesla through DriveWhip?</div>
+      <div class="faq-a">Plans start at $399 per week. Insurance, Tesla-certified maintenance, and unlimited mileage are all included. No hidden fees.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to own a car to sign up?</div>
+      <div class="faq-a">No. DriveWhip provides the vehicle. You just need to be approved to drive for Uber or Lyft.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is insurance included?</div>
+      <div class="faq-a">Yes. Full insurance coverage is included in your weekly rate. You don't need a separate policy.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I drive for multiple platforms?</div>
+      <div class="faq-a">Yes. DriveWhip Teslas are approved for Uber, Lyft, Instacart, and other gig platforms simultaneously.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Where do I pick up the vehicle in Chicago?</div>
+      <div class="faq-a">All Chicago pickups are at 2107 W Fulton St, Chicago, IL — in the West Loop neighborhood.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does approval take?</div>
+      <div class="faq-a">Most drivers are approved within 24 hours. Same-day approval is available in many cases.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I pay for charging?</div>
+      <div class="faq-a">Charging costs are significantly lower than gas. Most Chicago DriveWhip drivers charge overnight at home or use public chargers. No gas costs ever.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="section-label">Chicago Location</div>
+  <h2>Pick Up Your Tesla in the West Loop</h2>
+  <div class="location-grid">
+    <div class="location-map">🗺️</div>
+    <div class="location-info">
+      <h3>DriveWhip Chicago</h3>
+      <div class="location-detail">
+        <div class="loc-icon">📍</div>
+        <div class="loc-text">
+          <strong>Address</strong>
+          <span>2107 W Fulton St, Chicago, IL 60612</span>
+        </div>
+      </div>
+      <div class="location-detail">
+        <div class="loc-icon">🕐</div>
+        <div class="loc-text">
+          <strong>Hours</strong>
+          <span>Monday – Friday: 9am – 6pm<br>Saturday: 10am – 4pm</span>
+        </div>
+      </div>
+      <div class="location-detail">
+        <div class="loc-icon">🚇</div>
+        <div class="loc-text">
+          <strong>Getting Here</strong>
+          <span>Near the Green/Pink Line (Ashland stop). Street parking available on Fulton.</span>
+        </div>
+      </div>
+      <a href="#apply" class="btn-primary" style="display:inline-block; margin-top:12px;">Reserve a Vehicle</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="section-label" style="color:#E8401C">Ready to Roll?</div>
+  <h2>Start Driving a Tesla<br>This Week in Chicago</h2>
+  <p>Join Chicago's gig drivers earning more with DriveWhip.<br>Apply in minutes. On the road in 24 hours.</p>
+  <a href="https://www.drivewhip.com" class="btn-primary" style="font-size:18px; padding:18px 48px;">Apply Now — It's Free</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Drive<span>Whip</span></div>
+      <p>Affordable Tesla rentals for rideshare and delivery drivers in Chicago. Let's Make Moves.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#fleet">Our Fleet</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#apply">Apply Now</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Platforms</h4>
+      <ul>
+        <li><a href="#">Uber</a></li>
+        <li><a href="#">Lyft</a></li>
+        <li><a href="#">Instacart</a></li>
+        <li><a href="#">All Platforms</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">2107 W Fulton St</a></li>
+        <li><a href="#">Chicago, IL 60612</a></li>
+        <li><a href="https://www.drivewhip.com">drivewhip.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 DriveWhip. All rights reserved. | <a href="#" style="color:#666">Privacy Policy</a> | <a href="#" style="color:#666">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>
